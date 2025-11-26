@@ -16,7 +16,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     env:
-      BUILD_NUMBER: v${{ github.run_number }}   # Prefix 'v' to make a valid Docker tag
+      BUILD_NUMBER: v${{ github.run_number }}   # Use GitHub run number as Docker tag
 
     steps:
     - name: Checkout repository
