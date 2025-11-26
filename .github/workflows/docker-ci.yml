@@ -16,7 +16,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     env:
-      BUILD_NUMBER: v${{ github.run_number }}
+      BUILD_NUMBER: ${{ github.run_number }}   # Use only the run number
 
     steps:
       - name: Checkout repository
