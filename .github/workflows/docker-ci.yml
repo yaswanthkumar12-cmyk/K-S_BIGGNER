@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  USERNAME: yaswanthchennareddy25@gmail.com
+  USERNAME: yaswanthkumar12
   PASSWORD: yaSH@123456789
 
 jobs:
