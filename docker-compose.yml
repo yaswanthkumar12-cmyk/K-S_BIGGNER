@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        BUILD_NUMBER: ${BUILD_NUMBER:-local}
+    image: landing-frontend:${BUILD_NUMBER:-local}
+    ports:
+      - "8080:80"
+    networks:
+      - landing-network
+
+  backend:
+    build:
+      context: ./backend
+      args:
+        BUILD_NUMBER: ${BUILD_NUMBER:-local}
+    image: landing-backend:${BUILD_NUMBER:-local}
+    ports:
+      - "5000:5000"
+    networks:
+      - landing-network
+
+networks:
+  landing-network:
+    driver: bridge
